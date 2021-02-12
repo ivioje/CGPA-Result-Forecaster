@@ -53,7 +53,7 @@
 
               <div>
                 <label for="numAdd">Enter Number of courses to be added:</label>
-                <input type="number" name="numAdd" class="numAdd" value="2" />
+                <input type="number" name="numAdd" class="numAdd" id="numAdd" value="2" />
               </div>
             </div>
 
@@ -66,13 +66,16 @@
 
               <div class="display__output">
                 <div class="display__output__container">
+                  <label>
                   <input
                     type="text"
                     name="courseCode"
                     class="courseCode"
                     placeholder="e.g. Course 1"
                   />
+                  </label>
 
+                  <label>
                   <select class="creditUnit">
                     <option value="0">0</option>
                     <option value="1" selected>1</option>
@@ -86,7 +89,9 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                   </select>
+                  </label>
 
+                  <label>
                   <select class="grade">
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -95,15 +100,20 @@
                     <option value="E">E</option>
                     <option value="F">F</option>
                   </select>
+                  </label>
+
                 </div>
                 <div class="display__output__container">
+                  <label>
                   <input
                     type="text"
                     name="courseCode"
                     class="courseCode"
                     placeholder="e.g. Course 1"
                   />
+                  </label>
 
+                  <label>
                   <select class="creditUnit">
                     <option value="0">0</option>
                     <option value="1" selected>1</option>
@@ -117,7 +127,9 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                   </select>
+                  </label>
 
+                  <label>
                   <select class="grade">
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -126,6 +138,7 @@
                     <option value="E">E</option>
                     <option value="F">F</option>
                   </select>
+                  </label>
                 </div>
               </div>
             </div>
