@@ -275,3 +275,8 @@ function gpaResult () {
   }
 }
 
+// Calculate the cgpa
+function cgpaCal (cgpaArr) {
+  let sum = cgpaArr.reduce((a, b) => Number(a) + Number(b));
+  return (sum / cgpaArr.length).toFixed(2);
+}
