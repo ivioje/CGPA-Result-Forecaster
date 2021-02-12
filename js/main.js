@@ -280,3 +280,30 @@ function cgpaCal (cgpaArr) {
   let sum = cgpaArr.reduce((a, b) => Number(a) + Number(b));
   return (sum / cgpaArr.length).toFixed(2);
 }
+
+// Calculate the average score
+function averageGPA (years, score) {
+  let gpaNext;
+
+  const extract = cgpaArray.reduce((a, b) => {
+    a.push(score - b);
+    return a;
+  }, []);
+  const extractSum = extract.reduce((a, b) => a + b);
+
+  function getAverage () {
+    let average;
+
+    average = extractSum / (yearsProgram(years) - cgpaArray.length) + score;
+
+    if (average < 0) {
+      return 0;
+    }
+
+    return average.toFixed(2);
+  }
+
+  gpaNext = getAverage();
+
+  return gpaNext;
+}
