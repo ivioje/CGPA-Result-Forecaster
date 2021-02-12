@@ -80,3 +80,37 @@ function undoCgpaArray () {
     console.log(cgpaArray);
   }
 }
+
+// Calculate for the next semester
+function continueCalculation () {
+  if (!clickedYesBtn) {
+    addInput.focus();
+    addInput.select();
+
+    grades.forEach(grade => {
+      grade.value = '';
+    });
+    creditUnits.forEach(creditUnit => {
+      creditUnit.value = '';
+    });
+    courseCodeInputs.forEach(courseCodeInput => {
+      courseCodeInput.value = '';
+    });
+    totalUnit.innerHTML = 0;
+    gpaValue.innerHTML = 0;
+
+    if (semester.innerHTML === '1st') {
+      semester.innerHTML = '2nd';
+    } else {
+      semester.innerHTML = '1st';
+      levelCount++;
+    }
+
+    level.innerHTML = levelCount;
+
+    clickedYesBtn = true;
+    clickedCalcBtn = false;
+
+    console.log(clickedYesBtn);
+  }
+}
