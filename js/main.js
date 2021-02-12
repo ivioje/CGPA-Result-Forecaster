@@ -307,3 +307,52 @@ function averageGPA (years, score) {
 
   return gpaNext;
 }
+
+// Function to add new inputs to the page
+function addNewInput () {
+  const displayOutput = call('.display__output'); // selecting the table body
+  const addInput = call('.numAdd').value; // indicating the number of rows to be added
+
+  // A function to add rows which takes a parameter
+  function addRow (num) {
+    let str = `
+      <div class="display__output__container">
+        <input type="text" name="courseCode" class="courseCode" placeholder="e.g. Course 1" />
+    
+        <select class="creditUnit">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      
+        <select class="grade">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+        </select>
+      </div>
+    `;
+
+    // If the parameter is null or there's nothing ""
+    // the process should just return the str variable
+    if (num === '') return str;
+
+    // This is to make the str (string) variable repeat
+    // at a certain amount of time based on the argument passed
+    return str.repeat(num);
+  }
+
+  // Function invoked
+  displayOutput.innerHTML = addRow(addInput);
+}
