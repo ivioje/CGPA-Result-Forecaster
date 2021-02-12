@@ -168,3 +168,27 @@ function stopCalculation () {
     displayResult.style.display = 'none';
   });
 }
+
+// When form is submitted
+function formSubmit (e) {
+  const formError = call('#formError');
+  const modalBg = call('.modal-bg');
+  let messages = [];
+
+  addInput.focus();
+  addInput.select();
+  if (userName.value === '' || userName.value == null) {
+    messages.push('Name is required');
+  }
+
+  if (years.value === '' || years.value == null) {
+    messages.push('Years of program is required');
+  }
+
+  if (messages.length > 0) {
+    formError.innerText = messages.join(', ');
+  } else {
+    e.preventDefault();
+    modalBg.style.display = 'none';
+  }
+}
