@@ -1,1 +1,1 @@
-# CGPA-GPA-Result-Forecaster
+# CGPA/GPA-Result-Forecaster
