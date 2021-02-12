@@ -192,3 +192,86 @@ function formSubmit (e) {
     modalBg.style.display = 'none';
   }
 }
+
+// Make name first Letter uppercase
+function firstUpper (name) {
+  return name.charAt(0).toUpperCase() + name.slice(1);
+}
+
+// Function to calculate the gpa score
+function gpaResult () {
+  const creditUnits = callAll('.creditUnit');
+  const grades = callAll('.grade');
+  let totalUnit = call('.totalUnit');
+  let gpaValue = call('.gpaScore');
+  let error = call('.error');
+
+  let resultContinue = call('.resultContinue');
+
+  let arrCredit = [];
+  let arrGrade = [];
+
+  if (!clickedCalcBtn) {
+    creditUnits.forEach(creditUnit => {
+      if (creditUnit.value !== '') {
+        arrCredit.push(Number(creditUnit.value));
+      }
+    });
+
+    grades.forEach(grade => {
+      if (grade.value !== '') {
+        arrGrade.push(gradeToPoints(grade.value));
+      }
+    });
+
+    // From the array - arrCredit, adding all values in the array
+    let sumCredit = arrCredit.reduce((a, b) => {
+      return a + b;
+    });
+
+    // Output is stored as sumGPA
+    let sumGPA = arrGrade.reduce((r, a, i) => {
+      return r + a * arrCredit[i];
+    }, 0);
+
+    // totalUnit has the total summed credit
+    totalUnit.innerHTML = sumCredit;
+
+    gpaValue.innerHTML =
+      (sumGPA / sumCredit).toFixed(2) === 'NaN'
+        ? disErr()
+        : (sumGPA / sumCredit).toFixed(2);
+
+    let scoreValue = (sumGPA / sumCredit).toFixed(2);
+
+    cgpaArray.push(scoreValue);
+
+    cgpaScore.innerHTML = cgpaCal(cgpaArray);
+
+    // creditUnits.forEach(creditUnit => {});
+
+    function disErr () {
+      // Error displays immediately
+      setTimeout(() => {
+        error.style.display = 'block';
+      }, 0);
+
+      // at 5s error message disappears
+      setTimeout(() => {
+        error.style.display = 'none';
+      }, 5000);
+
+      return 0;
+    }
+
+    if ((sumGPA / sumCredit).toFixed(2) !== 'NaN') {
+      resultContinue.style.display = 'block';
+    }
+
+    clickedCalcBtn = true;
+
+    clickedYesBtn = false;
+    clickedUndoBtn = false;
+  }
+}
+
