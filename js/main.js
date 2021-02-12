@@ -382,3 +382,28 @@ function gradeToPoints (grade) {
       return undefined;
   }
 }
+
+function yearsProgram (years) {
+  switch (years) {
+    case '1':
+      return 2;
+      break;
+    case '2':
+      return 4;
+      break;
+    case '3':
+      return 6;
+      break;
+    case '4':
+      return 8;
+      break;
+    case '5':
+      return 10;
+      break;
+    case '6':
+      return 12;
+      break;
+    default:
+      return undefined;
+  }
+}
