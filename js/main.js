@@ -356,3 +356,29 @@ function addNewInput () {
   // Function invoked
   displayOutput.innerHTML = addRow(addInput);
 }
+
+// Grade value to points
+function gradeToPoints (grade) {
+  switch (grade) {
+    case 'A':
+      return 5;
+      break;
+    case 'B':
+      return 4;
+      break;
+    case 'C':
+      return 3;
+      break;
+    case 'D':
+      return 2;
+      break;
+    case 'E':
+      return 1;
+      break;
+    case 'F':
+      return 0;
+      break;
+    default:
+      return undefined;
+  }
+}
