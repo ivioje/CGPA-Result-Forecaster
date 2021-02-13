@@ -302,5 +302,10 @@ footer {
   font-size: 12px;
   width: 90%;
 }
+footer p a {
+  color: #050b21;
+  //border-bottom: 1px solid #050b21;
+  text-decoration: underline;
+}
 
 @import "medium";

@@ -430,6 +430,11 @@ footer {
   width: 90%;
 }
 
+footer p a {
+  color: #050b21;
+  text-decoration: underline;
+}
+
 @media (min-width: 500px) {
   .calc__display {
     font-size: 1rem;
