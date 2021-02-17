@@ -40,4 +40,5 @@ The CGPA Result Forecaster calculates your GPA and CGPA score, then from your cu
 
 ![project 3 image](https://jomefavourite.github.io/Images/project3.png)
 
-![project 4 image](https://jomefavourite.github.io/Images/project4.1.png)
+![project 4 image](https://raw.githubusercontent.com/ivioje/CGPA-Result-Forecaster/master/images/gpa.png
+)
